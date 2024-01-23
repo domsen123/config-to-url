@@ -1,5 +1,5 @@
 {
-  "name": "url-generator",
+  "name": "config-to-url",
   "type": "module",
   "version": "1.0.0",
   "license": "MIT",
