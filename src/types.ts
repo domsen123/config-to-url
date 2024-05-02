@@ -1,6 +1,9 @@
 export interface Config {
   data: string[]
   currentIndex: number
-  assignTo: 'param' | 'query'
-  assignToKey: string
+  assignTo: {
+    assignToType: 'param' | 'query'
+    assignToKey: string
+  }[]
+  lock?: boolean
 }
