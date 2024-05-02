@@ -23,9 +23,9 @@ describe('generateUrls', () => {
           {
             assignToType: 'param',
             assignToKey: 'paramA',
-          }
-        ]
-      
+          },
+        ],
+
       },
     ]
 
@@ -62,7 +62,7 @@ describe('generateUrls', () => {
             assignToKey: 'queryB',
           },
         ],
-        lock: true
+        lock: true,
       },
       {
         data: ['alpha', 'beta'],
@@ -71,9 +71,9 @@ describe('generateUrls', () => {
           {
             assignToType: 'param',
             assignToKey: 'paramA',
-          }
-        ]
-      
+          },
+        ],
+
       },
     ]
 
@@ -91,8 +91,6 @@ describe('generateUrls', () => {
 
     expect(generatedUrls).toEqual(expect.arrayContaining(expectedUrls))
     expect(generatedUrls.length).toBe(expectedUrls.length)
-
-    console.log(generatedUrls)
   })
 
   it('handles empty config', () => {
@@ -138,8 +136,6 @@ describe('generateUrls', () => {
     // console.log(generatedUrls)
   })
 
-
-
   // it('handles large config', () => {
   //   // Create a large config with many parameters and queries
   //   const config: Config[] = [
@@ -161,7 +157,6 @@ describe('generateUrls', () => {
   //   // const expectedNumberOfUrls = config.filter(c => c.assignToType === 'param').reduce((acc, curr) => acc * curr.data.length, 1)
   //   //   * config.filter(c => c.assignToType === 'query').reduce((acc, curr) => acc * curr.data.length, 1)
   //   cpmst expectedNumberOfUrls = config
-
 
   //   // Run the function with the large config
   //   const generatedUrls = generateUrls(config, baseUrl, path)

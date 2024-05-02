@@ -38,29 +38,29 @@ function replaceParamsInPath(path: string, params: Config[]): string {
 
 // Generate all combinations of configurations
 function generateCombinations(configs: Config[]): Array<Array<Config>> {
-  if (configs.length === 0) {
-    return [[]];
-  }
+  if (configs.length === 0)
+    return [[]]
 
-  const firstConfig = configs[0];
-  let combinations = [];
+  const firstConfig = configs[0]
+  let combinations = []
 
   // Behandle die Konfiguration, die gesperrt ist
   if (firstConfig.lock) {
     // Durchlaufe alle Werte in `data`, aber verwende den gleichen Index für alle `assignTo` Elemente
     combinations = firstConfig.data.flatMap((dataValue, i) =>
       generateCombinations(configs.slice(1)).map(combination =>
-        [Object.assign({}, firstConfig, { currentIndex: i }), ...combination]
+        [Object.assign({}, firstConfig, { currentIndex: i }), ...combination],
       ),
-    );
-  } else {
+    )
+  }
+  else {
     // Wenn `lock` nicht gesetzt ist, generiere Kombinationen, indem du `currentIndex` variierst
     combinations = firstConfig.data.flatMap((_, i) =>
       generateCombinations(configs.slice(1)).map(combination =>
         [Object.assign({}, firstConfig, { currentIndex: i }), ...combination],
       ),
-    );
+    )
   }
 
-  return combinations;
+  return combinations
 }
