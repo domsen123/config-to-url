@@ -64,3 +64,7 @@ function generateCombinations(configs: Config[]): Array<Array<Config>> {
 
   return combinations
 }
+
+export {
+  Config
+}
